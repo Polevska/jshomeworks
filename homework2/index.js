@@ -2,16 +2,14 @@ let n;
 let m;
 
 do {
-  do {
-    n = prompt("Could you please enter an integer number");
-  } while (!Number.isInteger(Number(n)));
+  n = +prompt("Could you please enter an integer number");
+} while (!Number.isInteger(n) || n <= 0);
 
-  do {
-    m = prompt(
-      "Could you please enter another bigger integer number than previous one"
-    );
-  } while (!Number.isInteger(Number(m)));
-} while (Number(n) > Number(m));
+do {
+  m = +prompt(
+    "Could you please enter another bigger integer number than previous one"
+  );
+} while (!Number.isInteger(m) || m <= n);
 
 const even = confirm("Do you want to skip even numbers?");
 
