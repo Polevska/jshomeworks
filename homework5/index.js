@@ -20,7 +20,10 @@ console.log("Task #1: ", a);
 function getAverage(...numbers) {
   return (
     numbers.reduce((accum, item, index, arr) => {
-      return accum + item;
+      if (Number(item) === item && item % 1 === 0) {
+        return accum + item;
+      }
+      return accum;
     }, 0) / numbers.length
   );
 }
