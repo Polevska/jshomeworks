@@ -37,10 +37,11 @@ console.log("************************************************************");
 
 function getMySalary(country) {
   const salary = Math.floor(Math.random() * (2000 - 1500 + 1) + 1500);
+  const taxes = salary * country.tax;
   return {
     salary,
-    taxes: country.tax,
-    profit: salary - country.tax,
+    taxes,
+    profit: salary - taxes,
   };
 }
 
