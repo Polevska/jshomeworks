@@ -1,0 +1,41 @@
+.robot-bg {
+  width: 100%;
+  background-image: url(./img/robot.png);
+  background-repeat: no-repeat;
+  height: 510px;
+  background-size: cover;
+  padding-top: 8%;
+  box-sizing: border-box;
+  padding-left: 20%;
+}
+
+.current-letter {
+  width: 200px;
+  height: 200px;
+  font-size: 180px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 38px;
+}
+
+.button {
+  height: 70px;
+  width: 70px;
+  font-size: x-large;
+  font-weight: bolder;
+  border: double;
+  border-color: yellowgreen;
+  background-color: cornsilk;
+  cursor: pointer;
+}
+
+.button:focus {
+  background-color: red;
+}
