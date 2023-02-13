@@ -11,6 +11,15 @@ async function fetchCharacters(characterUrls) {
   return await Promise.all(characterResponses);
 }
 
+function renderLoader() {
+  return `<div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>`;
+}
+
 function renderHeader() {
   return `<div class="header header-photo">Photo</div>
           <div class="header">Name</div>
@@ -41,10 +50,16 @@ async function handleGetEpisodeInfo() {
   const episodeNumber = +document.querySelector(".episode-input").value;
 
   if (!isNaN(episodeNumber) && episodeNumber > 0 && episodeNumber <= 6) {
+    const body = document.querySelector("body");
+
+    document.querySelector(".loader").style.display = "block";
+
     const episodeInfo = await fetchInfo(
       `https://swapi.dev/api/films/${episodeNumber}`
     );
     const characters = await fetchCharacters(episodeInfo.characters);
+
+    document.querySelector(".loader").style.display = "none";
 
     const header = renderHeader();
     const rows = renderCharacters(characters);
@@ -58,6 +73,6 @@ function handleNextButton() {
   const episodeNumber = +document.querySelector(".episode-input").value;
 
   if (!isNaN(episodeNumber) && episodeNumber > 0 && episodeNumber <= 6) {
-    window.location.href = `${window.location.href}/planets.html?episode=${episodeNumber}`;
+    window.location.href = `${window.location.href}planets.html?episode=${episodeNumber}`;
   }
 }
