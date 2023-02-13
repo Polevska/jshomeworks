@@ -58,9 +58,6 @@ function handleNextButton() {
   const episodeNumber = +document.querySelector(".episode-input").value;
 
   if (!isNaN(episodeNumber) && episodeNumber > 0 && episodeNumber <= 6) {
-    window.location.href = window.location.href.replace(
-      "index.html",
-      `planets.html?episode=${episodeNumber}`
-    );
+    window.location.href = `${window.location.href}/planets.html?episode=${episodeNumber}`;
   }
 }
