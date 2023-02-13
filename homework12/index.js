@@ -52,10 +52,8 @@ async function handleGetEpisodeInfo() {
   if (!isNaN(episodeNum) && episodeNum > 0 && episodeNum <= 6) {
     document.querySelector(".loader").style.display = "block";
 
-    const episode = await fetchInfo(
-      `https://swapi.dev/api/films/${episodeNum}`
-    );
-    const characters = await fetchCharacters(episode.characters);
+    const episod = await fetchInfo(`https://swapi.dev/api/films/${episodeNum}`);
+    const characters = await fetchCharacters(episod.characters);
 
     document.querySelector(".loader").style.display = "none";
 
