@@ -47,17 +47,15 @@ function renderCharacters(characters) {
 }
 
 async function handleGetEpisodeInfo() {
-  const episodeNumber = +document.querySelector(".episode-input").value;
+  const episodeNum = +document.querySelector(".episode-input").value;
 
-  if (!isNaN(episodeNumber) && episodeNumber > 0 && episodeNumber <= 6) {
-    const body = document.querySelector("body");
-
+  if (!isNaN(episodeNum) && episodeNum > 0 && episodeNum <= 6) {
     document.querySelector(".loader").style.display = "block";
 
-    const episodeInfo = await fetchInfo(
-      `https://swapi.dev/api/films/${episodeNumber}`
+    const episode = await fetchInfo(
+      `https://swapi.dev/api/films/${episodeNum}`
     );
-    const characters = await fetchCharacters(episodeInfo.characters);
+    const characters = await fetchCharacters(episode.characters);
 
     document.querySelector(".loader").style.display = "none";
 

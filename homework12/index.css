@@ -15,7 +15,7 @@
 .next-btn {
   height: 40px;
   padding: 10px 15px;
-  display: block;
+  display: inline-block;
   border: 1px solid;
   text-decoration: none;
   width: fit-content;
