@@ -1,0 +1,55 @@
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  display: flex;
+}
+
+.post {
+  background-color: cadetblue;
+}
+
+.avatar img {
+  width: 60px;
+  border-radius: 47px;
+}
+
+.name,
+.nickname,
+.date {
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.name {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.nickname,
+.date {
+  color: #4d4545;
+}
+
+.content {
+  padding-left: 62px;
+  color: white;
+  font-weight: 500;
+}
+
+.main-img img {
+  border-radius: 30px;
+  width: 100%;
+}
+
+.main-img {
+  padding: 24px;
+}
