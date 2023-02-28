@@ -14,6 +14,7 @@
 
 .post {
   background-color: cadetblue;
+  max-width: 700px;
 }
 
 .avatar img {
